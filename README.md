@@ -7,6 +7,7 @@ Predict future stock prices
 Generate BUY/SELL/HOLD signals
 Forecast next 7 trading days
 Visualize results with a dashboard
+
 🧠 Key Features
 📥 Data Acquisition
 Downloads historical stock data using yfinance
@@ -23,12 +24,14 @@ Bollinger Bands:
 Upper Band
 Lower Band
 Price Change (%)
+
 🧹 Data Preparation
 Scales data using MinMaxScaler
 Creates time-series sequences using a 30-day window
 Splits dataset into:
 80% Training
 20% Testing
+
 🤖 LSTM Model Architecture
 Input Layer (30 days × 7 features)
 ↓
@@ -46,6 +49,7 @@ Output Layer (1 neuron → Next day price)
 Optimizer: Adam (learning rate = 0.001)
 Loss: Mean Squared Error (MSE)
 EarlyStopping used to prevent overfitting
+
 📊 Model Evaluation
 
 Metrics used:
@@ -64,6 +68,7 @@ Condition	Signal
 Price ↑ & RSI < 45	BUY
 Price ↓ & RSI > 55	SELL
 Otherwise	HOLD
+
 🔮 Future Forecasting
 Predicts next 7 trading days
 Uses recursive prediction (sliding window method)
@@ -74,11 +79,13 @@ Actual vs Predicted Prices
 Buy/Sell Signal Chart
 RSI Indicator Plot
 7-Day Forecast Plot
+
 Dashboard with:
 Predictions
 Forecast
 Metrics
 Signal distribution
+
 🛠️ Technologies Used
 Python
 yfinance
