@@ -1,4 +1,4 @@
-📈 Stock Price Prediction using LSTM & Technical Indicators
+📈 Stock Price Prediction using LSTM 
 🚀 Project Overview
 
 This project builds a complete stock price prediction system using Long Short-Term Memory (LSTM) neural networks. It uses historical stock data along with technical indicators to:
@@ -73,6 +73,7 @@ Otherwise	HOLD
 Predicts next 7 trading days
 Uses recursive prediction (sliding window method)
 Includes uncertainty band (±2%)
+
 📉 Visualizations Generated
 Training Loss Graph
 Actual vs Predicted Prices
