@@ -6,7 +6,7 @@ import matplotlib.patches as mpatches
 import warnings
 warnings.filterwarnings('ignore')
 
-# Download 3 years of Apple stock data
+
 STOCK = 'AAPL'
 df = yf.download(STOCK, start='2021-01-01', end='2024-01-01', progress=False)
 df = df[['Open','High','Low','Close','Volume']]
@@ -38,7 +38,6 @@ df['BB_lower'] = df['BB_mid'] - 2 * close.rolling(20).std()
 # 4. Price change % from previous day
 df['Price_Change'] = close.pct_change() * 100
 
-# Drop rows where indicators couldn't be calculated (first 50 days)
 df.dropna(inplace=True)
 
 print('✅ Technical indicators added!')
@@ -52,8 +51,8 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout, Input
 from tensorflow.keras.optimizers import Adam
 from tensorflow.keras.callbacks import EarlyStopping
 
-# --- Prepare data ---
-# We use Close price + technical indicators as input features
+
+
 FEATURES = ['Close', 'MA_20', 'MA_50', 'RSI', 'BB_upper', 'BB_lower', 'Price_Change']
 data = df[FEATURES].values
 
